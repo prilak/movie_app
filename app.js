@@ -1,6 +1,8 @@
 var express = require("express");
 var app = express();
 var request = require("request");
+//defaults views to .ejs 
+app.set("view engine", "ejs");
 
 app.get("/results", function(req, res){
 	request("http://www.omdbapi.com/?s=guardians+of+the+galaxy&apikey=thewdb", function(error, response, body){
